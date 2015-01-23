@@ -1,0 +1,11 @@
+function imposters_index = findImposter(center,metric,radius,data,K)
+%given center,metric and radius,a circle can be drawn.the function is aim
+%to find imposters in the circle.
+%data : the last col of data is lable.
+%center: a vector with lable 
+[N D] = size(data);
+for row=1:1:N
+    tempVector = data(row,:);
+    distance_forcenter(1,row) = distanceForPoint(center,tempVector,metric);
+end
+sort(distance_forcenter)
